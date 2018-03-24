@@ -44,13 +44,13 @@ self.addEventListener('fetch', function(event){
 	event.respondWith(
 		caches.match(event.request).then(function(response){
 			if(response) return response;
-			/*caches.open(staticCacheName).then(function(cache){
-				return cache.add(event.request);
-			})*/
-			//console.log(event.request);
+
 			return fetch(event.request);
+			
 		}).catch(function(response){
+			
 			console.log(response);
+			
 		})
 	);
 });
