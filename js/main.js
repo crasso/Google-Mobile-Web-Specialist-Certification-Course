@@ -160,7 +160,7 @@ createRestaurantHTML = (restaurant) => {
   info.className = "info";
   li.append(info);
 
-  const name = document.createElement('h2');
+  const name = document.createElement('h2');  //changed to h2 for SEO reasons
   name.innerHTML = restaurant.name;
   info.append(name);
 
