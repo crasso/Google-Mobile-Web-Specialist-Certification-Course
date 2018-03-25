@@ -96,7 +96,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');  //changed to h2 for SEO reasons
+  const title = document.createElement('h3'); //changed to h2 for SEO reasons
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -171,17 +171,7 @@ contentPadding = () =>{
   content.style.marginTop = header.clientHeight + 'px';  
   
 }
-registerServiceWorker = function(){
-  if(!navigator.serviceWorker) return;
-
-  navigator.serviceWorker.register('/sw.js').then(function(){
-    console.log('registration worked!');
-  }).catch(function(){
-    console.log('registration failed!');
-  });
-}
 
  window.addEventListener("DOMContentLoaded", (event) => {
   contentPadding();
-  registerServiceWorker();
 });
